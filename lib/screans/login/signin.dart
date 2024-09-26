@@ -1,5 +1,6 @@
 import 'package:flutter_todo/screans/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_todo/screans/login/signin_signup.dart';
 import 'package:flutter_todo/screans/login/signup.dart';
 
 class Signin extends StatelessWidget {
@@ -9,7 +10,20 @@ class Signin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ToDo'),
+        title: const Text('ToDo'),
+        /*actions: [
+          Center(
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: IconButton(
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/SigninSignup', (route) => false);
+                  },
+                  icon: Icon(Icons.arrow_back_rounded)),
+            ),
+          ),
+        ],*/
       ),
       body: Center(
         child: Container(
@@ -18,7 +32,7 @@ class Signin extends StatelessWidget {
           alignment: Alignment.center,
           child: Column(
             children: [
-              Expanded(
+              const Expanded(
                 child: Column(
                   children: [
                     Text("Приветствую"),
@@ -26,7 +40,7 @@ class Signin extends StatelessWidget {
                   ],
                 ),
               ),
-              Expanded(
+              const Expanded(
                 child: Column(
                   children: [
                     TextField(
@@ -48,20 +62,14 @@ class Signin extends StatelessWidget {
                   children: [
                     TextButton(
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomePage()));
+                          Navigator.pushNamed(context, '/Signin');
                         },
-                        child: Text("Войти")),
+                        child: const Text("Войти")),
                     TextButton(
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Signup()));
+                          Navigator.pushNamed(context, '/Signup');
                         },
-                        child: Text("Зарегистрироваться")),
+                        child: const Text("Зарегистрироваться")),
                   ],
                 ),
               ),

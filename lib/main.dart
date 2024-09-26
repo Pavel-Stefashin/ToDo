@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo/screans/home_page.dart';
+import 'package:flutter_todo/screans/login/signin.dart';
+import 'package:flutter_todo/screans/login/signup.dart';
 import 'screans/login/signin_signup.dart';
 
 void main() {
@@ -7,17 +10,17 @@ void main() {
         title: 'ToDo',
 
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Color.fromRGBO(
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromRGBO(
               0, 32, 255, 1.0)),
           useMaterial3: true,
           textButtonTheme: TextButtonThemeData(
             style: ButtonStyle(
-              backgroundColor: WidgetStatePropertyAll(Color.fromRGBO(0,21,170, 1)),
+              backgroundColor: const WidgetStatePropertyAll(Color.fromRGBO(0,21,170, 1)),
               shape:WidgetStatePropertyAll(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
               ),
-              textStyle: WidgetStatePropertyAll(
+              textStyle: const WidgetStatePropertyAll(
                   TextStyle(
                     fontSize: 18,
                     color: Color.fromRGBO(255, 255, 255, 1),
@@ -27,18 +30,24 @@ void main() {
           ),
           outlinedButtonTheme: OutlinedButtonThemeData(
             style: OutlinedButton.styleFrom(
-              side: BorderSide(width: 3, color: Color.fromRGBO(0,21,170, 1)),
+              side: const BorderSide(width: 3, color: Color.fromRGBO(0,21,170, 1)),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              textStyle: TextStyle(
+              textStyle: const TextStyle(
                 fontSize: 18,
                 color: Color.fromRGBO(0,21,170, 1),
               ),
             ),
           ),
         ),
-        home: const SigninSignup(),
+        initialRoute: '/SigninSignup',
+        routes: {
+          '/': (context) => const HomePage(),
+          '/SigninSignup': (context) => const SigninSignup(),
+          '/Signin': (context) => const Signin(),
+          '/Signup': (context) => const Signup(),
+        },
       )
   );
 }

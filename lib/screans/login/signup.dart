@@ -1,13 +1,73 @@
+import 'package:flutter_todo/screans/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_todo/screans/login/signin.dart';
 
-class Signup extends StatelessWidget{
+class Signup extends StatelessWidget {
   const Signup({super.key});
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Hello"),
+      appBar: AppBar(
+        title: const Text('ToDo'),
+      ),
+      body: Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.8,
+          height: MediaQuery.of(context).size.height * 0.87,
+          alignment: Alignment.center,
+          child: Column(
+            children: [
+              const Expanded(
+                child: Column(
+                  children: [
+                    Text("Создание аккаунта"),
+                  ],
+                ),
+              ),
+              const Expanded(
+                child: Column(
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(
+                        hintText: "Имя пользователя",
+                      ),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                        hintText: "Логин",
+                        helperText: "Адресс электронной почты",
+                      ),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                        hintText: "Пароль",
+                        helperText: "Придумайте пароль",
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: Column(
+                  children: [
+                    TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/');
+                        },
+                        child: const Text("Зарегистрироваться")),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/Signin');
+                        },
+                        child: const Text("Войти")),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
-
 }
