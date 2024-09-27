@@ -10,6 +10,10 @@ class Signup extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('ToDo'),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pushNamedAndRemoveUntil(context, '/SigninSignup', (remate) => false);
+            }, icon: const Icon(Icons.arrow_back_sharp)),
       ),
       body: Center(
         child: Container(

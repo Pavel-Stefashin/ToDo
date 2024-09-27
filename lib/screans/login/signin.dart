@@ -11,19 +11,10 @@ class Signin extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('ToDo'),
-        /*actions: [
-          Center(
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: IconButton(
-                  onPressed: () {
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, '/SigninSignup', (route) => false);
-                  },
-                  icon: Icon(Icons.arrow_back_rounded)),
-            ),
-          ),
-        ],*/
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pushNamedAndRemoveUntil(context, '/SigninSignup', (remate) => false);
+            }, icon: const Icon(Icons.arrow_back_sharp)),
       ),
       body: Center(
         child: Container(
