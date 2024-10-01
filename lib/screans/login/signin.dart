@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_todo/screans/login/signin_signup.dart';
 import 'package:flutter_todo/screans/login/signup.dart';
 
+import '../../objects/MyTextButton.dart';
+
 class Signin extends StatelessWidget {
   const Signin({super.key});
 
@@ -51,6 +53,7 @@ class Signin extends StatelessWidget {
               Expanded(
                 child: Column(
                   children: [
+                    const MyTextButton(text: 'button',),
                     TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, '/Signin');
