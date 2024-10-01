@@ -1,8 +1,14 @@
 // import 'package:flutter/material.dart';
 //
 // class MyTextButton extends TextButton{
-//   const MyTextButton({super.key});
 //
-//   return TextButton(
-//       )
+//   MyTextButton({required super.onPressed, required super.child});
+//
+//   Widget build(BuildContext context) {
+//
+//     return TextButton(: (){},
+//       child: Text(""),
+//       style: ButtonStyle(),
+//       );
+//   }
 // }
