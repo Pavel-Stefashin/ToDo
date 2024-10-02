@@ -1,9 +1,7 @@
-import 'package:flutter_todo/screans/home_page.dart';
+import 'package:flutter_todo/objects/mapping.dart';
+import 'package:flutter_todo/objects/my_outlined_button.dart';
+import 'package:flutter_todo/objects/my_text_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_todo/screans/login/signin_signup.dart';
-import 'package:flutter_todo/screans/login/signup.dart';
-
-import '../../objects/MyTextButton.dart';
 
 class Signin extends StatelessWidget {
   const Signin({super.key});
@@ -15,8 +13,10 @@ class Signin extends StatelessWidget {
         title: const Text('ToDo'),
         leading: IconButton(
             onPressed: () {
-              Navigator.pushNamedAndRemoveUntil(context, '/SigninSignup', (remate) => false);
-            }, icon: const Icon(Icons.arrow_back_sharp)),
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/SigninSignup', (remate) => false);
+            },
+            icon: const Icon(Icons.arrow_back_sharp)),
       ),
       body: Center(
         child: Container(
@@ -53,17 +53,13 @@ class Signin extends StatelessWidget {
               Expanded(
                 child: Column(
                   children: [
-                    const MyTextButton(text: 'button',),
-                    TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/Signin');
-                        },
-                        child: const Text("Войти")),
-                    TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/Signup');
-                        },
-                        child: const Text("Зарегистрироваться")),
+                    MyTextButton(
+                      text: 'войти',
+                      action: () => GoToHome(context),
+                    ),
+                    MyOutlinedButton(
+                        text: "зарегистрироваться",
+                        action: () => GoToSignup(context)),
                   ],
                 ),
               ),

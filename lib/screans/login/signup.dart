@@ -1,6 +1,7 @@
-import 'package:flutter_todo/screans/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_todo/screans/login/signin.dart';
+import 'package:flutter_todo/objects/mapping.dart';
+import 'package:flutter_todo/objects/my_outlined_button.dart';
+import 'package:flutter_todo/objects/my_text_button.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
@@ -12,8 +13,10 @@ class Signup extends StatelessWidget {
         title: const Text('ToDo'),
         leading: IconButton(
             onPressed: () {
-              Navigator.pushNamedAndRemoveUntil(context, '/SigninSignup', (remate) => false);
-            }, icon: const Icon(Icons.arrow_back_sharp)),
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/SigninSignup', (remate) => false);
+            },
+            icon: const Icon(Icons.arrow_back_sharp)),
       ),
       body: Center(
         child: Container(
@@ -55,16 +58,12 @@ class Signup extends StatelessWidget {
               Expanded(
                 child: Column(
                   children: [
-                    TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/');
-                        },
-                        child: const Text("Зарегистрироваться")),
-                    TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/Signin');
-                        },
-                        child: const Text("Войти")),
+                    MyOutlinedButton(
+                        text: "зарегистрироваться",
+                        action: () => GoToHome(context)),
+                    MyTextButton(
+                        text: "войти", 
+                        action: () => GoToSignin(context)),
                   ],
                 ),
               ),
