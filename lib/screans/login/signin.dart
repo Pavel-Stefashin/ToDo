@@ -1,6 +1,6 @@
-import 'package:flutter_todo/objects/mapping.dart';
-import 'package:flutter_todo/objects/my_outlined_button.dart';
-import 'package:flutter_todo/objects/my_text_button.dart';
+import 'package:flutter_todo/objects/dartObjects/mapping.dart';
+import 'package:flutter_todo/objects/dartObjects/my_outlined_button.dart';
+import 'package:flutter_todo/objects/dartObjects/my_text_button.dart';
 import 'package:flutter/material.dart';
 
 class Signin extends StatelessWidget {

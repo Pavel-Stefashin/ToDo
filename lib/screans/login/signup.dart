@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_todo/objects/mapping.dart';
-import 'package:flutter_todo/objects/my_outlined_button.dart';
-import 'package:flutter_todo/objects/my_text_button.dart';
+import 'package:flutter_todo/objects/dartObjects/mapping.dart';
+import 'package:flutter_todo/objects/dartObjects/my_text_button.dart';
+import '../../objects/dartObjects/my_outlined_button.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
